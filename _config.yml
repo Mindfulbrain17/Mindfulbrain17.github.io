@@ -23,7 +23,7 @@ repository               : "Mindfulbrain17/Mindfulbrain17.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   name             : "Anant Goyal"
   pronouns         : # example: "she/her"  
   bio              : "A student for Life"
