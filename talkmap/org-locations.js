@@ -5,6 +5,11 @@ var addressPoints = [
     -118.242766
   ],
   [
+    "Why expectations hurt \u2014 and what to do about it<br />London School of Testing; Earth",
+    34.2331373,
+    -102.4107493
+  ],
+  [
     "Talk 2 on Relevant Topic in Your Field<br />London School of Testing; London, UK",
     51.5074456,
     -0.1277653
@@ -13,10 +18,5 @@ var addressPoints = [
     "Tutorial 1 on Relevant Topic in Your Field<br />UC-Berkeley Institute for Testing Science; Berkeley, CA, USA",
     37.8708393,
     -122.272863
-  ],
-  [
-    "Talk 1 on Relevant Topic in Your Field<br />UC San Francisco, Department of Testing; San Francisco, CA, USA",
-    37.7932754,
-    -122.3963589
   ]
 ];
