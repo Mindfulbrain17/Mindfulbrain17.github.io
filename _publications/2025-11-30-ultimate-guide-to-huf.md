@@ -1,26 +1,16 @@
 ---
-title: "The Ultimate Guide to HUF (Hindu Undivided Family): Tax Saving, Wealth Creation, and Legal Traps"
+title: "The Ultimate Guide to HUF"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-11-30-ultimate-guide-to-huf
 excerpt: 'A comprehensive guide for Indian taxpayers on using Hindu Undivided Family (HUF) structures to legally double tax limits. Covers formation, the critical Section 64(2) clubbing trap, daughters rights, and exit strategies.'
 date: 2025-11-30
 venue: 'Personal Finance'
-slidesurl: ''
-paperurl: ''
-bibtexurl: ''
-citation: 'Your Name. (2025). &quot;The Ultimate Guide to HUF: Tax Saving, Wealth Creation, and Legal Traps.&quot; <i>Personal Finance & Estate Planning Insights</i>.'
+
+citation: 'Anant Goyal. (2025). &quot;The Ultimate Guide to HUF: Tax Saving, Wealth Creation, and Legal Traps.&quot; <i>Personal Finance & Estate Planning Insights</i>.'
 ---
 
-**By [Your Name], Chartered Accountant & Family Office Advisor**
-
-Imagine if you could legally create a "clone" of yourself. This clone has its own PAN card, its own bank account, and most importantly, its own tax slab. While you pay tax on your high salary, this clone absorbs your investment income, pays tax at a much lower rate, and claims its own set of deductions.
-
-This isn’t science fiction. In India, this is called a **Hindu Undivided Family (HUF)**.
-
-For over 15 years, I have advised high-net-worth families on estate planning. I often see two extremes: clients who ignore the HUF because they think it’s "old-fashioned," and clients who rush into it without understanding the legal glue that binds them.
-
-This guide is your roadmap to understanding the HUF—how to save lakhs in taxes, how to build generational wealth, and crucially, how to avoid the legal landmines that can trap your assets forever.
+**By Anant Goyal**
 
 ---
 
