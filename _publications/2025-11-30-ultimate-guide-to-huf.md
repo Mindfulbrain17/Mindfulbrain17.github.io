@@ -21,7 +21,7 @@ It is **not** a separate business you incorporate. It is a family unit.
 * **Who is eligible?** Hindus, Sikhs, Jains, and Buddhists.
 * **The Composition:** It consists of a `Karta` (the head of the family), `Coparceners` (those who have a birthright to the property), and `Members`.
 
-**The Hook:** Since the HUF is a separate entity, it gets its own **Basic Exemption Limit** (currently ₹2.5 Lakhs under the Old Regime and ₹3 Lakhs under the New Regime). It acts as a "second file" to route your family income through.
+**Benefits:** Since the HUF is a separate entity, it gets its own **Basic Exemption Limit** (currently ₹2.5 Lakhs under the Old Regime and ₹3 Lakhs under the New Regime). It acts as a "second file" to route your family income through.
 
 ---
 
@@ -35,16 +35,16 @@ Just like an individual, an HUF can claim:
 * **Section 80D:** Health Insurance premiums for family members.
 * **Capital Gains Exemptions:** Section 54/54F (reinvesting capital gains into property).
 
-### Case Study: The Sharma Family
-Let’s look at Mr. Sharma. He earns a salary of ₹25 Lakhs. He also earns ₹5 Lakhs from ancestral property rentals and interest income.
+### Case Study: The Goyal Family
+Let’s look at Mr. Goyal. He earns a salary of ₹25 Lakhs. He also earns ₹5 Lakhs from ancestral property rentals and interest income.
 
-**Scenario A: Without HUF (All income taxed in Mr. Sharma's hands)**
+**Scenario A: Without HUF (All income taxed in Mr. Goyal's hands)**
 * Total Income: ₹30,00,000
 * Tax Slab: Highest bracket (30%)
 * **Tax Impact on that ₹5L extra income:** Approx. **₹1,56,000** (30% + Cess).
 
 **Scenario B: With HUF (Routing ₹5L rental income to HUF)**
-* Mr. Sharma’s Income: ₹25,00,000 (Taxed at his rate).
+* Mr. Goyal’s Income: ₹25,00,000 (Taxed at his rate).
 * HUF’s Income: ₹5,00,000.
 * *HUF Tax Calculation (Old Regime):*
     * Gross Income: ₹5,00,000
@@ -52,7 +52,7 @@ Let’s look at Mr. Sharma. He earns a salary of ₹25 Lakhs. He also earns ₹5
     * Net Taxable Income: ₹3,50,000
     * **Tax Payable:** **₹5,200** (approx, considering rebate limits/slab).
 
-**The Result:** Mr. Sharma saves approximately **₹1.5 Lakhs per year**. Over 20 years, with compounding, this single decision can create a corpus of over ₹1 Crore.
+**The Result:** Mr. Goyal saves approximately **₹1.5 Lakhs per year**. Over 20 years, with compounding, this single decision can create a corpus of over ₹1 Crore.
 
 ---
 
@@ -66,10 +66,10 @@ However, to use it for *Tax Purposes*, you need to formalize it.
 You need a legal stamp paper declaration (Affidavit) stating the name of the Karta, the coparceners, and the members. This deed serves as the "constitution" of your family unit.
 
 ### 2. Apply for a Separate PAN Card
-Use Form 49A. You will apply as the Karta. The card will arrive with the name "Manish Sharma (HUF)".
+Use Form 49A. You will apply as the Karta. The card will arrive with the name "Anant Goyal (HUF)".
 
 ### 3. Open an HUF Bank Account
-Banks require the HUF Deed, the HUF PAN, and the Karta’s KYC. They will also ask for a rubber stamp that says "For Sharma HUF, Karta".
+Banks require the HUF Deed, the HUF PAN, and the Karta’s KYC. They will also ask for a rubber stamp that says "For Goyal HUF, Karta".
 
 ### Member vs. Coparcener: A Vital Distinction
 * **Coparcener:** Includes the Karta, sons, and **daughters**. They have a birthright to the property and can demand a partition (division) of the HUF.
@@ -97,7 +97,7 @@ To make the HUF a valid tax-saving tool, the capital must come from sources *out
     * The HUF can receive gifts. However, if gifts exceed ₹50,000 in a year, the entire amount is taxed as income for the HUF.
     * *Strategy:* If a stranger/relative gives ₹2 Lakhs, the HUF pays tax on it, but the money *becomes* the HUF’s capital. Future income on this capital is taxed in the HUF.
 3.  **Specific Occasions:** Gifts received by the HUF on the marriage of a member are often tax-exempt.
-4.  **Will/Inheritance:** A valid Will can bequeath assets specifically to "The HUF of Mr. Sharma" rather than Mr. Sharma individually.
+4.  **Will/Inheritance:** A valid Will can bequeath assets specifically to "The HUF of Mr. Goyal" rather than Mr. Goyal individually.
 
 > **Pro Tip:** The "Accretion of Income" Loophole.
 > If you transfer money to the HUF and the clubbing provision applies, the *first* stage income is clubbed. But if that income is reinvested, the income generated on the reinvestment belongs to the HUF.
