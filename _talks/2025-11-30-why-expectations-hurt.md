@@ -3,6 +3,7 @@ title: "Why expectations hurt — and what to do about it"
 collection: talks
 type: "Talk"
 permalink: /talks/2025-11-30why-expectations-hurt
+venue: "London School of Testing"
 date: 2025-11-30
 location: "Earth"
 ---
