@@ -12,8 +12,6 @@ citation: 'Anant Goyal. (2025). &quot;The Ultimate Guide to HUF: Tax Saving, Wea
 
 **By Anant Goyal**
 
----
-
 ## What Exactly is an HUF?
 
 An HUF is a unique legal concept under Hindu Law that the Income Tax Department recognizes as a **separate tax entity**.
