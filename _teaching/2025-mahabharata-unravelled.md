@@ -8,15 +8,12 @@ date: 2025-12-02
 location: "Online"
 ---
 
-Mahabharata: Lessons in Dharma, Strength, and Human Nature — Reflections From Ami Ganatra’s *Mahabharata Unravelled*
-======
-
 The **Mahabharata** is not just an epic; it is a mirror.  
 A mirror that reflects our impulses, our wrongdoings, our strengths, our contradictions — and ultimately, our *dharma*. Reading *Mahabharata Unravelled* by Ami Ganatra made me realize how the epic is less about war and more about **human choices**, layered with nuance, clarity, and uncomfortable truths.
 
 This blog gathers my reflections and the passages from the book that deeply stayed with me.
 
-1. What Truly Is Dharma?
+## What Truly Is Dharma?
 ======
 
 The book opens with a reminder that dharma is not a rigid rulebook. It is a responsibility — to act for the welfare of all, especially our inner self, with purity and clarity.
@@ -28,7 +25,7 @@ One of the most powerful ideas is the timeless line:
 
 The Mahabharata is full of characters who forgot this truth — and characters who lived it even when it cost them everything.
 
-2. The Vastness of the Bharata Lineage
+## The Vastness of the Bharata Lineage
 ======
 
 We often think of the Pandavas only as the five brothers, but the text reveals a much richer, more complex family tree. Each Pandava had multiple wives and children who shaped the political dynamics of the epic.
@@ -42,7 +39,7 @@ Some fascinating details:
 
 The epic is not the story of five men — it is the story of an entire **civilization**, with each relationship shaping destiny.
 
-3. Shakuntalā’s Grit — And The Nature of Human Folly
+## Shakuntalā’s Grit — And The Nature of Human Folly
 ======
 
 One line from the book struck me deeply:
