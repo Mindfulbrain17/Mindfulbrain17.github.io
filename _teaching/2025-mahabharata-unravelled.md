@@ -1,4 +1,3 @@
-
 ---
 title: "Mahabharata Unravelled"
 collection: teaching
