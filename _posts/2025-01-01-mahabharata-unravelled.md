@@ -1,11 +1,9 @@
 ---
 title: "Mahabharata Unravelled"
-collection: teaching
+category: boons
 type: "Essay"
-permalink: /teaching/mahabharata-unravelled-2025
-venue: "Personal Blog"
-date: 2025-12-02
-location: "Online"
+permalink: /posts/mahabharata-unravelled
+date: 2025-01-01
 ---
 
 The **Mahabharata** is not just an epic; it is a mirror.  
