@@ -1,6 +1,6 @@
 ---
 title: "Why expectations hurt — and what to do about it"
-category: life
+category: philosophy
 type: "Talk"
 permalink: /posts/why-expectations-hurt
 date: 2025-11-30

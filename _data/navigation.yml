@@ -11,11 +11,11 @@ main:
   - title: "Books"
     url: /books/
 
-  - title: "Life"
-    url: /life/
+  - title: "Philosophy"
+    url: /philosophy/
 
-  - title: "Boons"
-    url: /boons/
+  - title: "Finance"
+    url: /finance/
 
   - title: "Info"
     url: /info/

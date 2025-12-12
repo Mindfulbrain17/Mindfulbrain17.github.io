@@ -1,6 +1,6 @@
 ---
 title: "Mahabharata Unravelled"
-category: boons
+category: books
 type: "Essay"
 permalink: /posts/mahabharata-unravelled
 date: 2025-01-01

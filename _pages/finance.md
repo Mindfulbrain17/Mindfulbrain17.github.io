@@ -1,12 +1,12 @@
 ---
 layout: archive
-title: "Life"
-permalink: /life/
+title: "Finance"
+permalink: /finance/
 author_profile: true
 ---
 
 {% include base_path %}
 
-{% for post in site.life reversed %}
+{% for post in site.finance reversed %}
   {% include archive-single.html %}
 {% endfor %}
