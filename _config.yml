@@ -223,10 +223,10 @@ collections:
   books:
     output: true
     permalink: /:collection/:path/
-  life:
+  philosophy:
     output: true
     permalink: /:collection/:path/
-  boons:
+  finance:
     output: true
     permalink: /:collection/:path/
   info:
@@ -252,19 +252,19 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _life
+  # _philosophy
   - scope:
       path: ""
-      type: life
+      type: philosophy
     values:
       layout: single
       author_profile: true
       share: true
       comments: true
-  # _boons
+  # _finance
   - scope:
       path: ""
-      type: boons
+      type: finance
     values:
       layout: single
       author_profile: true
