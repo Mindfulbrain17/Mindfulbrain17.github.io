@@ -1,11 +1,9 @@
 ---
 title: "Why expectations hurt — and what to do about it"
-collection: talks
+category: life
 type: "Talk"
-permalink: /talks/2025-11-30why-expectations-hurt
-venue: "London School of Testing"
+permalink: /posts/why-expectations-hurt
 date: 2025-11-30
-location: "Earth"
 ---
 
 > **Summary:** How our wanting for respect, care, and predictable behaviour from others becomes a source of pain — and practical, research-backed ways to feel steadier.
