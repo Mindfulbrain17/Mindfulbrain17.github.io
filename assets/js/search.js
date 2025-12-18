@@ -42,19 +42,9 @@
   }
 
   function loadSearch() {
-    // We need to fetch the JSON data first
-    // Assuming search-data.json is at /assets/js/search-data.json
-    // We can't use fetch easily in static sites without knowing baseurl perfectly,
-    // but we can rely on the fact that we loaded it via script tag in the previous implementation.
-    // However, to make this robust, let's fetch it.
-
-    // Actually, in the previous step, I included search-data.json as a script which sets window.store.
-    // Let's check if we can reuse that pattern or just fetch.
-    // The previous implementation used <script src="search-data.json"></script> which is weird because it's JSON.
-    // It should be fetched.
-
-    // Let's try to fetch it.
-    fetch('/assets/js/search-data.json')
+    // Fetch using the global baseurl variable
+    const base = window.baseurl || '';
+    fetch(base + '/assets/js/search-data.json')
       .then(response => response.json())
       .then(data => {
         store = {};
