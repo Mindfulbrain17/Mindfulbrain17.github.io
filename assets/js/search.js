@@ -1,63 +1,119 @@
+// search.js
 (function() {
-  function displaySearchResults(results, store) {
-    var searchResults = document.getElementById('search-results');
+  const searchToggleBtn = document.getElementById('search-toggle-btn');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchCloseBtn = document.getElementById('search-overlay-close');
+  const searchInput = document.getElementById('search-overlay-input');
+  const searchResultsList = document.getElementById('search-overlay-results-list');
+  let idx = null;
+  let store = null;
 
-    if (results.length) {
-      var appendString = '';
+  // Open Search
+  if (searchToggleBtn) {
+    searchToggleBtn.addEventListener('click', function() {
+      searchOverlay.classList.add('is-active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+      searchInput.focus();
 
-      for (var i = 0; i < results.length; i++) {
-        var item = store[results[i].ref];
-        appendString += '<li>';
-        appendString += '  <h3><a href="' + item.url + '">' + item.title + '</a></h3>';
-        appendString += '  <p>' + item.content.substring(0, 150) + '...</p>';
-        appendString += '</li>';
-      }
-
-      searchResults.innerHTML = appendString;
-    } else {
-      searchResults.innerHTML = '<li>No results found</li>';
-    }
-  }
-
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
-
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split('=');
-
-      if (pair[0] === variable) {
-        return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
-      }
-    }
-  }
-
-  var searchTerm = getQueryVariable('query');
-
-  if (searchTerm) {
-    document.getElementById('search-box').setAttribute("value", searchTerm);
-
-    // Initalize lunr with the fields it will be searching on. I've given title
-    // a boost of 10 to indicate matches on this field are more important.
-    var idx = lunr(function () {
-      this.field('id');
-      this.field('title', { boost: 10 });
-      this.field('author');
-      this.field('category');
-      this.field('content');
-
-      for (var key in window.store) {
-        this.add({
-          'id': key,
-          'title': window.store[key].title,
-          'author': window.store[key].author,
-          'category': window.store[key].category,
-          'content': window.store[key].content
-        });
+      // Load Lunr and Index if not already loaded
+      if (!idx) {
+        loadSearch();
       }
     });
+  }
 
-    var results = idx.search(searchTerm);
-    displaySearchResults(results, window.store);
+  // Close Search
+  if (searchCloseBtn) {
+    searchCloseBtn.addEventListener('click', closeSearch);
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('is-active')) {
+      closeSearch();
+    }
+  });
+
+  function closeSearch() {
+    searchOverlay.classList.remove('is-active');
+    document.body.style.overflow = '';
+    searchInput.value = '';
+    searchResultsList.innerHTML = '';
+  }
+
+  function loadSearch() {
+    // We need to fetch the JSON data first
+    // Assuming search-data.json is at /assets/js/search-data.json
+    // We can't use fetch easily in static sites without knowing baseurl perfectly,
+    // but we can rely on the fact that we loaded it via script tag in the previous implementation.
+    // However, to make this robust, let's fetch it.
+
+    // Actually, in the previous step, I included search-data.json as a script which sets window.store.
+    // Let's check if we can reuse that pattern or just fetch.
+    // The previous implementation used <script src="search-data.json"></script> which is weird because it's JSON.
+    // It should be fetched.
+
+    // Let's try to fetch it.
+    fetch('/assets/js/search-data.json')
+      .then(response => response.json())
+      .then(data => {
+        store = {};
+        // transform array to object map for display
+        data.forEach((item, index) => {
+          item.id = index;
+          store[index] = item;
+        });
+
+        idx = lunr(function () {
+          this.field('id');
+          this.field('title', { boost: 10 });
+          this.field('category');
+          this.field('content');
+
+          for (let key in store) {
+            this.add({
+              'id': store[key].id,
+              'title': store[key].title,
+              'category': store[key].category,
+              'content': store[key].content
+            });
+          }
+        });
+      })
+      .catch(err => console.error('Error loading search data:', err));
+  }
+
+  // Perform Search
+  if (searchInput) {
+    searchInput.addEventListener('keyup', function() {
+      const query = this.value;
+      if (!query || !idx) {
+        searchResultsList.innerHTML = '';
+        return;
+      }
+
+      const results = idx.search(query);
+      displayResults(results);
+    });
+  }
+
+  function displayResults(results) {
+    if (results.length) {
+      let html = '';
+      results.forEach(result => {
+        const item = store[result.ref];
+        html += `
+          <li>
+            <a href="${item.url}">
+              <h3>${item.title}</h3>
+              <p>${item.content.substring(0, 100)}...</p>
+            </a>
+          </li>
+        `;
+      });
+      searchResultsList.innerHTML = html;
+    } else {
+      searchResultsList.innerHTML = '<li class="no-results">No results found</li>';
+    }
   }
 })();
