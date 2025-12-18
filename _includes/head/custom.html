@@ -10,14 +10,21 @@
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
+<!-- Search Overlay CSS -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/search-overlay.css"/>
+
 <!-- favicon -->
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
+<!-- Base URL for JS -->
+<script>
+  window.baseurl = '{{ base_path }}';
+</script>
+
 <!-- Search Data (JSON) -->
 <script src="{{ base_path }}/assets/js/vendor/lunr.min.js" defer></script>
-<!-- Note: search-data.json is loaded via fetch in search.js, no need to include as script -->
 
 <!-- Scripts -->
 <script src="{{ base_path }}/assets/js/theme-switch.js" defer></script>
