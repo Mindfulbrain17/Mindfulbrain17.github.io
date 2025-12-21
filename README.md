@@ -1,96 +1,118 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Anant Goyal - Personal Website
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+A personal portfolio and blog website for Anant Goyal, built with [Jekyll](https://jekyllrb.com/) and based on the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) / [Academic Pages](https://github.com/academicpages/academicpages.github.io) theme.
 
-# Getting Started
+This site features a clean, responsive design with dark mode support, custom search functionality, and specialized content collections for books, philosophy, finance, and information.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## 🚀 Features
 
-See more info at https://academicpages.github.io/
+*   **Responsive Design:** Fully responsive layout that adapts to all screen sizes (desktop, tablet, mobile).
+*   **Dark Mode:** Built-in dark mode toggle with persistent preference (stored in `localStorage`).
+    *   *Light Mode Accent:* Black (`#000000`)
+    *   *Dark Mode Background:* True Black (`#000000`)
+    *   *Dark Mode Text:* White (`#ffffff`)
+*   **Search:** Client-side search powered by [Lunr.js](https://lunrjs.com/), featuring a custom overlay UI.
+*   **Custom Collections:** Organized content beyond standard posts:
+    *   📚 `_books` - Book reviews and notes.
+    *   🧠 `_philosophy` - Philosophical essays and thoughts.
+    *   💰 `_finance` - Financial insights and analysis.
+    *   ℹ️ `_info` - General information and updates.
+*   **Typography:** Uses the **Inter** font family for a modern, clean look.
+*   **Navigation:** "Greedy" navigation bar that automatically groups overflow items into a dropdown on smaller screens.
 
-## Running locally
+## 🛠️ Tech Stack
 
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+*   **Static Site Generator:** [Jekyll](https://jekyllrb.com/)
+*   **Templating:** [Liquid](https://shopify.github.io/liquid/)
+*   **Styling:** SCSS / SASS
+*   **Scripting:** Vanilla JavaScript, jQuery (for specific plugins)
+*   **Search:** Lunr.js
+*   **Build Pipeline:** Ruby (Jekyll) + Node.js (Asset minification)
 
-1. Clone the repository and made updates as detailed above.
+## 📦 Installation & Local Development
 
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
+To run this website locally, you'll need **Ruby** (with Bundler) and **Node.js** installed on your machine.
 
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stoping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
+### 1. Clone the Repository
 ```bash
-chmod -R 777 .
-docker compose up
+git clone https://github.com/Mindfulbrain17/Mindfulbrain17.github.io.git
+cd Mindfulbrain17.github.io
 ```
 
-You should now be able to access the website from `localhost:4000`.
+### 2. Install Ruby Dependencies
+Install the required Gems specified in the `Gemfile`:
+```bash
+bundle install
+```
 
-### Using the DevContainer in VS Code
+### 3. Install Node.js Dependencies
+Install JavaScript dependencies (used for minification and plugins):
+```bash
+npm install
+```
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+### 4. Build Assets
+Compile and minify the JavaScript assets (creates `assets/js/main.min.js`):
+```bash
+npm run build:js
+```
 
-# Maintenance
+### 5. Run the Dev Server
+Start the Jekyll server with live reloading:
+```bash
+bundle exec jekyll serve
+```
+Access the site at `http://localhost:4000`.
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+## ⚙️ Configuration
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+The main configuration file is `_config.yml`. Here you can customize:
+*   **Site Metadata:** Title, description, author info.
+*   **Navigation:** Top navigation links.
+*   **Social Links:** Update your social media profiles (Telegram, Twitter, GitHub, etc.).
+    *   *Note:* Telegram requires a full URL (e.g., `https://t.me/username`).
+*   **Theme Settings:** Default theme preferences.
 
-## Bugfixes and enhancements
+### Styles & Colors
+SCSS variables can be found in `_sass/theme/`.
+*   `_default_light.scss`: Variables for Light Mode.
+*   `_default_dark.scss`: Variables for Dark Mode.
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+## 📝 Content Management
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+Content is managed via Markdown files in their respective directories.
 
+### Adding a New Post
+Create a file in `_posts/` with the format `YYYY-MM-DD-title.md`.
+```yaml
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+title: "My New Post"
+date: 2024-01-01
+categories:
+  - blog
+tags:
+  - update
+---
+Content goes here...
+```
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+### Adding to Collections
+To add content to specific collections (Books, Philosophy, etc.), create a markdown file in the corresponding directory:
+*   `_books/`
+*   `_philosophy/`
+*   `_finance/`
+*   `_info/`
+
+Ensure you include the necessary Front Matter (YAML header) similar to standard posts.
+
+## 🚢 Deployment
+
+This site is configured to be hosted on **GitHub Pages**. Pushing changes to the `master` (or `main`) branch will automatically trigger a build and deployment.
+
+## 📄 License
+
+This project is based on the [Academic Pages](https://github.com/academicpages/academicpages.github.io) template, which is a fork of [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/).
+
+Copyright © 2024 Anant Goyal.
+
+The source code is available under the [MIT License](LICENSE).
