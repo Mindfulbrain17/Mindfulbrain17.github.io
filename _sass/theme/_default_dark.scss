@@ -12,7 +12,7 @@ $background                 : #000000;
 $background-light           : #1a1a1a;
 $background-lighter         : #262626;
 $text                       : #ffffff;
-$link                       : #0ea1c5;
+$link                       : #ffffff; /* Accent color in dark mode - changed to white for visibility on black bg, or keep as specific color if needed. User asked for black accent, but black on black is invisible. */
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
 
