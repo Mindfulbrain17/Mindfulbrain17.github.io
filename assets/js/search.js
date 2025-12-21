@@ -1,47 +1,40 @@
 // search.js
 (function() {
-  const searchToggleBtn = document.getElementById('search-toggle-btn');
-  const searchOverlay = document.getElementById('search-overlay');
-  const searchCloseBtn = document.getElementById('search-overlay-close');
-  const searchInput = document.getElementById('search-overlay-input');
-  const searchResultsList = document.getElementById('search-overlay-results-list');
+  const searchOverlayId = 'search-overlay';
+  const searchInputId = 'search-overlay-input';
+  const searchResultsListId = 'search-overlay-results-list';
   let idx = null;
   let store = null;
+  let isLoading = false;
 
-  // Open Search
-  if (searchToggleBtn) {
-    searchToggleBtn.addEventListener('click', function() {
-      searchOverlay.classList.add('is-active');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
-      searchInput.focus();
+  function openSearch() {
+    const searchOverlay = document.getElementById(searchOverlayId);
+    const searchInput = document.getElementById(searchInputId);
+    if (!searchOverlay) return;
 
-      // Load Lunr and Index if not already loaded
-      if (!idx) {
-        loadSearch();
-      }
-    });
-  }
+    searchOverlay.classList.add('is-active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    if (searchInput) searchInput.focus();
 
-  // Close Search
-  if (searchCloseBtn) {
-    searchCloseBtn.addEventListener('click', closeSearch);
-  }
-
-  // Close on Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && searchOverlay.classList.contains('is-active')) {
-      closeSearch();
+    // Load Lunr and Index if not already loaded
+    if (!idx && !isLoading) {
+      loadSearch();
     }
-  });
+  }
 
   function closeSearch() {
-    searchOverlay.classList.remove('is-active');
+    const searchOverlay = document.getElementById(searchOverlayId);
+    const searchInput = document.getElementById(searchInputId);
+    const searchResultsList = document.getElementById(searchResultsListId);
+
+    if (searchOverlay) searchOverlay.classList.remove('is-active');
     document.body.style.overflow = '';
-    searchInput.value = '';
-    searchResultsList.innerHTML = '';
+    if (searchInput) searchInput.value = '';
+    if (searchResultsList) searchResultsList.innerHTML = '';
   }
 
   function loadSearch() {
+    isLoading = true;
     // Fetch using the global baseurl variable
     const base = window.baseurl || '';
     fetch(base + '/assets/js/search-data.json')
@@ -69,25 +62,31 @@
             });
           }
         });
+        isLoading = false;
       })
-      .catch(err => console.error('Error loading search data:', err));
+      .catch(err => {
+        console.error('Error loading search data:', err);
+        isLoading = false;
+      });
   }
 
-  // Perform Search
-  if (searchInput) {
-    searchInput.addEventListener('keyup', function() {
-      const query = this.value;
-      if (!query || !idx) {
-        searchResultsList.innerHTML = '';
-        return;
-      }
+  function performSearch(query) {
+    const searchResultsList = document.getElementById(searchResultsListId);
+    if (!searchResultsList) return;
 
-      const results = idx.search(query);
-      displayResults(results);
-    });
+    if (!query || !idx) {
+      searchResultsList.innerHTML = '';
+      return;
+    }
+
+    const results = idx.search(query);
+    displayResults(results);
   }
 
   function displayResults(results) {
+    const searchResultsList = document.getElementById(searchResultsListId);
+    if (!searchResultsList) return;
+
     if (results.length) {
       let html = '';
       results.forEach(result => {
@@ -106,4 +105,37 @@
       searchResultsList.innerHTML = '<li class="no-results">No results found</li>';
     }
   }
+
+  // Event Delegation
+  document.addEventListener('click', (event) => {
+    // Open Search
+    if (event.target.closest('#search-toggle-btn')) {
+      openSearch();
+    }
+    // Close Search
+    if (event.target.closest('#search-overlay-close')) {
+      closeSearch();
+    }
+  });
+
+  // Keydown events
+  document.addEventListener('keydown', (e) => {
+    const searchOverlay = document.getElementById(searchOverlayId);
+    if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('is-active')) {
+      closeSearch();
+    }
+  });
+
+  // Input event (delegated or direct, direct is better for input)
+  // Since the input is always in the DOM (in the overlay), we can try to attach it directly,
+  // but if the overlay is dynamically inserted (it's not, it's in default.html), direct is fine.
+  // However, to be safe against any weird loading order, let's use delegation for input too if possible,
+  // but 'keyup' on document for a specific ID is fine.
+
+  document.addEventListener('keyup', (event) => {
+    if (event.target && event.target.id === searchInputId) {
+       performSearch(event.target.value);
+    }
+  });
+
 })();
